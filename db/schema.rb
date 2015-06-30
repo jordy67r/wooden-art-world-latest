@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626092915) do
+ActiveRecord::Schema.define(version: 20150630133531) do
 
   create_table "enquiries", force: true do |t|
     t.string   "name"
@@ -52,7 +52,10 @@ ActiveRecord::Schema.define(version: 20150626092915) do
     t.text     "left_image"
     t.text     "right_image"
     t.string   "service_type"
+    t.string   "slug"
   end
+
+  add_index "services", ["slug"], name: "index_services_on_slug"
 
   create_table "static_pages", force: true do |t|
     t.datetime "created_at"

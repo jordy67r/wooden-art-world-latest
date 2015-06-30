@@ -16,7 +16,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.find(params[:id])
+    @service = Service.friendly.find(params[:id])
     @services = Service.all
     @service_attachments = @service.service_attachments
     @galleries = @service.galleries

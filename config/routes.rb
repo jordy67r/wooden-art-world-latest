@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   resources :service_attachments
 
-  resources :services
-
-  resources :galleries
-
   resources :enquiries
 
+  resources :services
+
   resources :static_pages
+
+  resources :enquiries, path: "contact" do 
+    collection do 
+      get "thanks"
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
