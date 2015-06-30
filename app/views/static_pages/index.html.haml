@@ -1,0 +1,19 @@
+.image_scroll_bar  
+  = image_tag('slide1.jpg')
+  = image_tag('slide2.jpg')
+  = image_tag('slide3.jpg')
+  = image_tag('slide4.jpg')
+.content
+  .welcome_message.split_5
+    %h3 Welcome. We are Wooden Art World. We sell Amazing and Unique hand-carved Art and Furniture. Take a look around.
+  .service_grid_heading.split_8
+    %h2 Our Works
+  %ul.services_grid.clearfix
+    - @primary_services.each do |service|
+      %li.column.split_33
+        %h3
+          = service.title
+        - service.service_attachments.reverse.drop(3).first(1).each do |p|
+          = image_tag p.picture_url(:service_center) if p.picture?
+        %p
+          = service.body.truncate(375, escape: false, seperator:  ' ', omission: "#{link_to ' ... more', service, :class => "more_link"}").html_safe

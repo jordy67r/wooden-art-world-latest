@@ -1,0 +1,33 @@
+.enquiry_form {
+  background: #441414;
+  color: #fff;
+  padding: 30px 40px;
+  border-radius: 4px;
+  text-align: center;
+  input {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+  }
+  .field {
+    padding: 14px 0;
+  }
+  @media (max-width: 580px) {
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    color: $text-black;
+    text-align: left;
+    }
+}
+.actions_button {
+  color: $text-black;
+  width: 80px;
+}
+.enquiries_text {
+  font-family: Adelle, serif;
+  @media (max-width: 580px) {
+    width: 100%;
+  }
+}

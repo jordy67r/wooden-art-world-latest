@@ -1,0 +1,24 @@
+.top_strip.clearfix
+  .top_strip_inner
+    %ul.left_top_strip
+      %li
+        = link_to 'Facebook', 'https://www.facebook.com/pages/Wooden-Art-World/542876149081768'
+      %li
+        = link_to 'Twitter', 'https://twitter.com/WoodenArtWorld'
+      %li
+        = link_to 'Instagram', 'https://instagram.com/woodenartworld/'
+      %li
+        = link_to 'Pintrest', 'https://www.pinterest.com/woodenartworld/'
+    %ul.right_top_strip
+      %li <span class="t_and_e">T.</span> 01263 713570
+      %li <span class="t_and_e">E.</span> Shop@woodenArtWorld.co.uk
+.header_wrapper
+  .logo
+    =link_to image_tag('logo2.jpg'), root_path
+  %ul.header_links
+    - Service.where(primary: true).each do |service|
+      %li= link_to service.title, service
+    %li
+      = link_to 'about', about_us_path
+    %li
+      = link_to 'contact', contact_path

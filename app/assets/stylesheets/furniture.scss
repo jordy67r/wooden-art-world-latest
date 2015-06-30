@@ -1,0 +1,93 @@
+.furniture_header_links {
+  list-style: none;
+  padding: 0;
+  margin: -45px auto 50px;
+  border-color: #D1D1D1;
+  border-style: solid;
+  border-width: 2px 0 2px 0;
+  width: 20%;
+  text-align: center;
+  li {
+    display: inline;
+    padding: 4px 5%;
+  }
+  a {
+    text-decoration: none;
+    color: $text-black;
+    font-size: 12px;
+  }
+}
+.read_more {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 200px 0;
+  li {
+    float: left;
+  }
+  p {
+    margin: 0 10px 0 0;
+    background: #C42929;
+    color: #fff;
+    padding: 0 3px;
+    font-size: 12px;
+  }
+  a {
+    text-decoration: none;
+    color: $text-black;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}
+/*Show Page*/
+.quote_furniture {
+  border-color: #999;
+  border-style: solid;
+  border-width: 2px 0 2px 0;
+  margin: 0 0 10px 0;
+  h2 {
+    font-size: 14px;
+    font-family: open sans, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+    line-height: 30px;
+    padding: 11px 0;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 9px;
+    font-weight: 300;
+  }
+}
+.furniture_column {
+  float: left;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+.furniture {
+  img {
+    width: 100%;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    border: 0;
+  }
+}
+.furniture_title {
+  border-bottom: 2px solid #aaa;
+  margin-left: 10%;
+  h1 {
+    line-height: 1em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+}
+.furniture_body {
+  margin: 0 0 0 12%;
+}
+.service_gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

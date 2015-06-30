@@ -1,0 +1,12 @@
+#content.clearfix
+  .column.split_3
+    %h1 Services
+    %div.service_index_table
+      %ul
+        - @services.each do |service|
+          %li
+            .service_item
+              %h2= service.title.titleize
+              .body_text
+                = truncate(service.body.html_safe, :length => 400, :escape => false)
+                = link_to " More", service

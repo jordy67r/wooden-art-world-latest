@@ -1,0 +1,71 @@
+.content.clearfix
+  %ul.sub_menu
+    - if @service.primary
+      - @service.sub_services.each do |sub_service|
+        %li= link_to sub_service.title, sub_service
+    - else
+      = link_to("< #{@service.parent.try(:title)}", service_path(@service.parent), class: "trail") unless @service.primary
+- if @service.primary
+  %ul.image_banner.split_10
+    %li.split_33 
+      = image_tag (@service.left_image)
+    %li.split_33 
+      = image_tag (@service.central_image)
+    %li.split_33 
+      = image_tag (@service.right_image)
+
+- else
+.content.clearfix
+  .split_10
+    -# IF STATEMENT FOR WHETHER 7 OR 9 PHOTOS ARE UPLOADED TO CHOOSE HOW MANY APPEAR ON LEFT
+    %ul.left_pictures.column.split_1
+      - if @service_attachments.count == 7
+        - @service_attachments.first(3).each do |p|
+          %li
+            = image_tag p.picture_url(:left) if p.picture?
+      - elsif @service_attachments.count == 8
+        - @service_attachments.first(4).each do |p|
+          %li
+            = image_tag p.picture_url(:left) if p.picture?
+      - else
+        - @service_attachments.first(5).each do |p|
+          %li
+            = image_tag p.picture_url(:left) if p.picture?
+    %ul.center_picture.column.split_6
+      - @service_attachments.reverse.drop(3).first(1).each do |p|
+        %li
+          = image_tag p.picture_url(:service_center) if p.picture?
+    -# CLASS FOR QUOTE DEPENDENT ON WHETHER ON PRIMMARY OR SECONDARY PAGE
+    - if @service.primary 
+      
+    - else
+      .quote.column.split_3
+        = @service.quote
+    %ul.right_pictures.column.split_2
+      - @service_attachments.last(3).each do |p|
+        %li
+          = image_tag p.picture_url(:right) if p.picture?
+  - if @service.primary
+    .column.split_10
+      .main_service_title.column.split_7
+        %h1= @service.title.titleize
+    .quote_primary.column.split_3
+      = @service.quote
+    .primary_body.column.split_7.body_text.space
+      = @service.body.html_safe
+  - else
+    .service_body.column.split_6
+      %h1= @service.title.titleize
+      .body_text.space
+        %p
+          = @service.body.html_safe
+  %ul.gallery.column.split_10
+    - @galleries.each do |p|
+      %li.column.split_33
+        = image_tag p.image_url(:gallery_third) if p.image?
+  - if @service.primary
+    .primary_read_more.column.split_7
+      %p Read More:
+      %ul
+        - @service.sub_services.each do |sub_service|
+          %li= link_to sub_service.title + " / ", sub_service

@@ -1,0 +1,64 @@
+body {
+  background-image: image-url('background.jpg');
+}
+.general_wrap {
+  width: 100%;
+}
+.content {
+  width: 1200px;
+  margin: 0 auto;
+  @media (max-width:1200px) {
+    width: 100%;
+  }
+}
+.column {
+  float: left;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+.split_1 {
+  width: 10%;
+}
+.split_2 {
+  width: 20%;
+}
+.split_3 {
+  width: 30%;
+}
+.split_33 {
+  width:33.33%;
+}
+.split_4 {
+  width: 40%;
+}
+.split_5 {
+  width: 50%
+}
+.split_6 {
+  width: 60%;
+}
+.split_7 {
+  width: 70%;
+}
+.split_8 {
+  width: 80%;
+}
+.split_9 {
+  width: 90%;
+}
+.split_10 {
+  width: 100%;
+}
+.body_text {
+  color: $text-black;
+  line-height: 22px;
+  font-size: 14px;
+}
+img {
+  max-width: 100%;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
