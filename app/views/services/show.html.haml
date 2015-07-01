@@ -38,9 +38,10 @@
     -# CLASS FOR QUOTE DEPENDENT ON WHETHER ON PRIMMARY OR SECONDARY PAGE
     - if @service.primary 
       
-    - else
+    - elsif @service.quote?
       .quote.column.split_3
         = @service.quote
+    - else
     %ul.right_pictures.column.split_2
       - @service_attachments.last(3).each do |p|
         %li
